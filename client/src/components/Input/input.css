@@ -25,3 +25,17 @@ input:focus, textarea:focus, select:focus{
   border: none;
   width: 20%;
 }
+
+.file {
+  display: none;
+}
+.fileUpload {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #5886d6;
+  padding: 20px;
+  display: inline-block;
+  border: none;
+  width: 20%;
+}

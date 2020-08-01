@@ -6,7 +6,13 @@ const terms = {
     signIn: "Sign In"
   },
   input: {
-    sendBtn:"Send"
+    sendBtn: "Send"
+  },
+  uploadImg: {
+    title: "Select Image"
+  },
+  infoBar: {
+    close: "Close"
   }
 }
 

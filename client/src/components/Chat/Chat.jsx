@@ -18,17 +18,14 @@ const Chat = ({location}) => {
   const [messages, setMessages] = useState([])
 
   const END_POINT = 'localhost:5000'
-  //componentdidmount와 같다
   useEffect(()=>{
     const {name, room} = queryString.parse(location.search)
     socket = io(END_POINT)
     setName(name)
     setRoom(room)
 
-    //server에 join을 통해서 데이터를 보냄
     socket.emit('join', {name, room}, (res)=>{
     })
-    //useEffect()애서 return 은 unmount와 같다. 즉 user leave일 때 사용!
     return () =>{
       socket.emit('disconnect')
       socket.off()
@@ -38,14 +35,12 @@ const Chat = ({location}) => {
   useEffect(() => {
   
     socket.on('message', (message) =>{
-      console.log(message,'wwwwwwwwwwwwwwwwwwwwwwwwwww')
       setMessages([...messages, message])
     })
   }, [messages])
 
   const uploadFile = async e => {
     const files = e.target.files;
-    console.log(files, '---fiels---');
     const data = new FormData;
     data.append('file', files[0]);
     data.append('upload_preset', 'sickfit');
@@ -55,7 +50,7 @@ const Chat = ({location}) => {
       body: data,
     });
     const file = await res.json();
-    socket.emit('sendMessage', file, ()=>console.log('aaaaaaaa'))
+    socket.emit('sendMessage', file, ()=>console.log('img uploaded'))
   };
 
   const sendMessage = (event) => {

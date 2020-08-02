@@ -19,7 +19,7 @@ if you input same name, please click close, re-start nodejs and refresh on both 
 
 There are Two folder which are "server" and "client".
 
-you should npm install in both folder
+you should npm install and npm start in both folder
 
 ### example
 ```

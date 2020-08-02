@@ -20,7 +20,7 @@ There are Two folder which are "server" and "client".
 
 you should npm install in both folder
 
-###example
+### example
 ```
 User/win/Desktop/chat_app/client and User/win/Desktop/chat_app/server
 npm install

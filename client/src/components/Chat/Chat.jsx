@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import queryString from 'query-string'
 import io from 'socket.io-client'
 
@@ -25,6 +25,10 @@ const Chat = ({location}) => {
     setRoom(room)
 
     socket.emit('join', {name, room}, (res)=>{
+      if(res) {
+        alert(res)
+      }
+      console.log(res)
     })
     return () =>{
       socket.emit('disconnect')

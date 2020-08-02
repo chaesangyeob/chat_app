@@ -33,10 +33,8 @@ io.on('connection', (socket)=>{
       return callback(error)
     }
 
-    //admin system정보 여기서
-    socket.emit('message', { user:'admin', text:`${user.name}, welcome to the room ${user.room}` })
+    socket.emit('message', { user:'admin', text:`${user.name}, welcome to the room ${user.room}, please read README on github https://github.com/chaesangyeob/chat_app` })
     
-    //braodcast는 room에 있는 모든 사람에게 msg를 보낸다.
     socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name} has joined!` });
 
     socket.join(user.room)

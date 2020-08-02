@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 
 import './input.css';
 import terms from '../../terms'
+
 class Input extends Component {
   render() {
     const { title } = terms.uploadImg
-    const { setMessage, sendMessage, message, socket } = this.props
+    const { setMessage, sendMessage, message } = this.props
     return (
       <form className="form">
         <input

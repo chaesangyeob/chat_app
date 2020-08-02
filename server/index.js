@@ -14,17 +14,16 @@ const server = http.createServer(app)
 const io = socketio(server)
 
 io.on('connection', (socket)=>{
-  console.log('------------------we have a new connetion----')
   const uploader = new siofu();
   uploader.dir = "/uploads";
   uploader.listen(socket);
 
   uploader.on("saved", function(event){
-    console.log(event.file),'event-----------file';
+    console.log(event.file),'saved';
 });
 
   uploader.on("error", function(event){
-    console.log("E-------------rror from uplo---------ader", event);
+    console.log("error", event);
 });
 
   

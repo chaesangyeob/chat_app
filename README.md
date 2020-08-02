@@ -25,4 +25,5 @@ you should npm install in both folder
 ```
 User/win/Desktop/chat_app/client and User/win/Desktop/chat_app/server
 npm install
+npm start
 ```
